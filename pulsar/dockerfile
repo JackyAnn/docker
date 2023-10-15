@@ -20,4 +20,4 @@ EXPOSE 6650 8080
 WORKDIR /opt/pulsar
 
 # 使用 CMD 指令指定容器启动时要运行的命令
-CMD ["/opt/pulsar/bin/pulsar", "standalone"]
+CMD ["/opt/pulsar/bin", "standalone"]
