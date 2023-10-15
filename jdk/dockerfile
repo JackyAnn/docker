@@ -1,0 +1,11 @@
+# 使用 Fedora 作为基础镜像
+FROM fedora
+
+# 设置维护者信息（可选）
+LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
+
+# 更新系统并安装 OpenJDK
+RUN dnf -y update && dnf -y install java-latest-openjdk-jmods && dnf clean all
+
+# 使用 CMD 指令指定容器启动时要运行的命令
+CMD ["java", "-version"]

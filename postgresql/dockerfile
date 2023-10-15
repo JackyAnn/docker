@@ -1,0 +1,17 @@
+# 使用 Fedora 作为基础镜像
+FROM fedora
+
+# 设置维护者信息（可选）
+LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
+
+# 更新系统并安装 PostgreSQL
+RUN dnf -y update && dnf -y install postgresql-server postgresql-contrib && dnf clean all
+
+# 初始化 PostgreSQL 数据库
+RUN initdb -D /var/lib/pgsql/data
+
+# 使用 EXPOSE 指令指定容器内 PostgreSQL 服务监听的端口
+EXPOSE 5432
+
+# 使用 CMD 指令指定容器启动时要运行的命令
+CMD ["postgres", "-D", "/var/lib/pgsql/data"]

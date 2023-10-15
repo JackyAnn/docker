@@ -1,0 +1,14 @@
+# 使用 Fedora 作为基础镜像
+FROM fedora
+
+# 设置维护者信息（可选）
+LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
+
+# 更新系统并安装 redis
+RUN dnf -y update && dnf -y install redis && dnf clean all
+
+# 使用 EXPOSE 指令指定容器内 Redis 服务监听的端口
+EXPOSE 6379
+
+# 使用 CMD 指令指定容器启动时要运行的命令
+CMD ["redis-server"]
