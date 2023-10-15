@@ -3,6 +3,7 @@ FROM fedora
 
 # 设置维护者信息（可选）
 LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
+LABEL description "openjdk"
 
 # 更新系统并安装 OpenJDK
 RUN dnf -y update && dnf -y install java-latest-openjdk-jmods && dnf clean all

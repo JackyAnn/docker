@@ -3,6 +3,7 @@ FROM fedora
 
 # 设置维护者信息（可选）
 LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
+LABEL description "postgresql"
 
 # 更新系统并安装 PostgreSQL
 RUN dnf -y update && dnf -y install postgresql-server postgresql-contrib && dnf clean all
