@@ -9,7 +9,7 @@ LABEL description "postgresql"
 RUN dnf -y update && dnf -y install postgresql-server postgresql-contrib && dnf clean all
 
 # 初始化 PostgreSQL 数据库
-RUN initdb -D /var/lib/pgsql/data
+RUN postgresql-setup --initdb
 
 # 使用 EXPOSE 指令指定容器内 PostgreSQL 服务监听的端口
 EXPOSE 5432
