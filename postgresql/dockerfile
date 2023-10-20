@@ -1,5 +1,5 @@
 # 使用 Fedora 作为基础镜像
-FROM fedora
+FROM arm64/fedora
 
 # 设置维护者信息（可选）
 LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
