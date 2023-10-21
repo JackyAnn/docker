@@ -20,14 +20,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push jdk
-        uses: docker/build-push-action@v5
-        with:
-          context: ./jdk
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/jdk:latest
-
       - name: Build and push redis
         uses: docker/build-push-action@v5
         with:
@@ -35,19 +27,3 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/redis:latest
-
-      - name: Build and push postgresql
-        uses: docker/build-push-action@v5
-        with:
-          context: ./postgresql
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/postgresql:latest
-
-      - name: Build and push pulsar
-        uses: docker/build-push-action@v5
-        with:
-          context: ./pulsar
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/pulsar:latest
