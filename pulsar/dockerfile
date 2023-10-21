@@ -6,7 +6,7 @@ LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
 LABEL description "pulsar"
 
 # 更新系统并安装 OpenJDK
-RUN dnf -y update && dnf install -y systemd && dnf -y install java-latest-openjdk-jmods && dnf clean all
+RUN dnf -y update && dnf -y install java-latest-openjdk-jmods && dnf clean all
 
 # 创建目录并下载并解压 Apache Pulsar
 RUN mkdir -p /opt/pulsar && \

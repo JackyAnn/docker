@@ -6,7 +6,7 @@ LABEL maintainer="JackyAnn <JackyAnn@foxmail.com>"
 LABEL description "postgresql"
 
 # 更新系统并安装 PostgreSQL
-RUN dnf -y update && dnf install -y systemd && dnf -y install postgresql-server postgresql-contrib && dnf clean all
+RUN dnf -y update && dnf -y install postgresql-server postgresql-contrib && dnf clean all
 
 # 初始化 PostgreSQL 数据库
 RUN postgresql-setup --initdb
